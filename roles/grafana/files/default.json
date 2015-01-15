@@ -1,0 +1,758 @@
+{
+  "annotations": {
+    "enable": true,
+    "list": []
+  },
+  "editable": true,
+  "hideAllLegends": false,
+  "hideControls": false,
+  "id": null,
+  "nav": [
+    {
+      "collapse": false,
+      "enable": true,
+      "notice": false,
+      "now": true,
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "status": "Stable",
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "2h",
+        "3h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ],
+      "type": "timepicker"
+    }
+  ],
+  "originalTitle": "Grafana",
+  "refresh": false,
+  "rows": [
+    {
+      "collapsable": true,
+      "collapse": false,
+      "editable": true,
+      "height": "150px",
+      "notice": false,
+      "panels": [
+        {
+          "content": "<div class=\"text-center\" style=\"padding-top: 15px\">\n<img src=\"http://grafana.org/assets/img/logo_transparent_200x75.png\"> \n</div>",
+          "editable": true,
+          "error": false,
+          "id": 1,
+          "mode": "html",
+          "span": 12,
+          "style": {},
+          "title": "Welcome to",
+          "type": "text"
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapsable": true,
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "notice": false,
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "fill": 1,
+          "grid": {
+            "leftMax": null,
+            "leftMin": null,
+            "max": null,
+            "min": null,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "interactive": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "legend_counts": true,
+          "lines": true,
+          "linewidth": 2,
+          "nullPointMode": "connected",
+          "options": false,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "spyable": true,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "column": "value",
+              "function": "mean",
+              "target": "groupByNode(collectd.[[host]].interface-eth0.if_octets.rx,4,'sum')"
+            },
+            {
+              "column": "value",
+              "function": "mean",
+              "target": "groupByNode(collectd.[[host]].interface-eth0.if_octets.tx,4,'sum')"
+            }
+          ],
+          "timezone": "browser",
+          "title": "eth0",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bytes",
+            "short"
+          ],
+          "zerofill": true
+        }
+      ],
+      "title": "test"
+    },
+    {
+      "collapsable": true,
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "notice": false,
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "fill": 3,
+          "grid": {
+            "leftMax": null,
+            "leftMin": 0,
+            "max": null,
+            "min": null,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 3,
+          "interactive": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "legend_counts": true,
+          "lines": true,
+          "linewidth": 2,
+          "nullPointMode": "null as zero",
+          "options": false,
+          "percentage": true,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "spyable": true,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "column": "value",
+              "function": "mean",
+              "target": "aliasByMetric(groupByNode(collectd.[[host]].cpu-*.*,3,'sum'))"
+            }
+          ],
+          "timezone": "browser",
+          "title": "CPU",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ],
+          "zerofill": true
+        }
+      ],
+      "title": "test"
+    },
+    {
+      "collapsable": true,
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "notice": false,
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "fill": 1,
+          "grid": {
+            "leftMax": null,
+            "leftMin": null,
+            "max": null,
+            "min": null,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 4,
+          "interactive": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "legend_counts": true,
+          "lines": true,
+          "linewidth": 2,
+          "nullPointMode": "connected",
+          "options": false,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "spyable": true,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "column": "value",
+              "function": "mean",
+              "target": "groupByNode(collectd.[[host]].memory.*,3,'sum')"
+            }
+          ],
+          "timezone": "browser",
+          "title": "Memory",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "bits",
+            "short"
+          ],
+          "zerofill": true
+        }
+      ],
+      "title": "test"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "fill": 0,
+          "grid": {
+            "leftMax": null,
+            "leftMin": 0,
+            "max": null,
+            "min": null,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 5,
+          "interactive": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "legend_counts": true,
+          "lines": true,
+          "linewidth": 2,
+          "nullPointMode": "connected",
+          "options": false,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "spyable": true,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "column": "value",
+              "function": "mean",
+              "target": "groupByNode(collectd.[[host]].load.load.*,4,'avg')"
+            }
+          ],
+          "timezone": "browser",
+          "title": "Load",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "short"
+          ],
+          "zerofill": true
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "fill": 0,
+          "grid": {
+            "leftMax": null,
+            "leftMin": 0,
+            "max": null,
+            "min": null,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 6,
+          "interactive": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "legend_counts": true,
+          "lines": true,
+          "linewidth": 3,
+          "nullPointMode": "connected",
+          "options": false,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "spyable": true,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "column": "value",
+              "function": "mean",
+              "target": "groupByNode(collectd.[[host]].disk-nbd0.disk_ops.*,4,'avg')"
+            }
+          ],
+          "timezone": "browser",
+          "title": "Disk ops/s",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "short"
+          ],
+          "zerofill": true
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "fill": 0,
+          "grid": {
+            "leftMax": null,
+            "leftMin": 0,
+            "max": null,
+            "min": null,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 7,
+          "interactive": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "legend_counts": true,
+          "lines": true,
+          "linewidth": 3,
+          "nullPointMode": "connected",
+          "options": false,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "spyable": true,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "column": "value",
+              "function": "mean",
+              "target": "groupByNode(collectd.[[host]].disk-nbd0.disk_time.*,4,'avg')"
+            }
+          ],
+          "timezone": "browser",
+          "title": "Disk time",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "ms",
+            "short"
+          ],
+          "zerofill": true
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "fill": 0,
+          "grid": {
+            "leftMax": null,
+            "leftMin": 0,
+            "max": null,
+            "min": null,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 8,
+          "interactive": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "legend_counts": true,
+          "lines": true,
+          "linewidth": 3,
+          "nullPointMode": "connected",
+          "options": false,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "spyable": true,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "column": "value",
+              "function": "mean",
+              "target": "groupByNode(collectd.[[host]].processes.ps*,3,'avg')"
+            }
+          ],
+          "timezone": "browser",
+          "title": "Processes",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "short"
+          ],
+          "zerofill": true
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "fill": 0,
+          "grid": {
+            "leftMax": null,
+            "leftMin": 0,
+            "max": null,
+            "min": null,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 9,
+          "interactive": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "legend_counts": true,
+          "lines": true,
+          "linewidth": 3,
+          "nullPointMode": "connected",
+          "options": false,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "spyable": true,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "column": "value",
+              "function": "mean",
+              "target": "groupByNode(collectd.[[host]].processes.fork_rate,3,'avg')"
+            }
+          ],
+          "timezone": "browser",
+          "title": "fork_rate",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "none",
+            "short"
+          ],
+          "zerofill": true
+        }
+      ],
+      "title": "New row"
+    }
+  ],
+  "sharedCrosshair": false,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "enable": true,
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "All",
+          "value": "{test-ansible-1,test-ansible-2,test-master}"
+        },
+        "datasource": null,
+        "includeAll": true,
+        "name": "host",
+        "options": [
+          {
+            "text": "All",
+            "value": "{test-ansible-1,test-ansible-2,test-master}"
+          },
+          {
+            "text": "test-ansible-1",
+            "value": "test-ansible-1"
+          },
+          {
+            "text": "test-ansible-2",
+            "value": "test-ansible-2"
+          },
+          {
+            "text": "test-master",
+            "value": "test-master"
+          }
+        ],
+        "query": "collectd.*",
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timezone": "browser",
+  "title": "Grafana",
+  "version": 6
+}

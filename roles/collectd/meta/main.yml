@@ -1,0 +1,6 @@
+---
+dependencies:
+  - role: apache
+    when: '"{{ collectd_mode }}" == "server"'
+  - role: graphite
+    when: '"{{ collectd_mode }}" == "server"'

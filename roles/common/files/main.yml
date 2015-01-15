@@ -1,0 +1,8 @@
+coucou
+
+{% for  host in groups['master'] %}
+
+  {{ host }} 
+  --- 
+
+{% endfor %}

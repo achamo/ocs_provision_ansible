@@ -1,0 +1,21 @@
+---
+- name: graphite-web
+  apt: pkg=graphite-web
+  notify:
+    - graphite syncdb
+- name: graphite-carbon
+  apt: pkg=graphite-carbon
+
+- name: graphite-default
+  replace: dest=/etc/default/graphite-carbon regexp="CARBON_CACHE_ENABLED=false" replace="CARBON_CACHE_ENABLED=true"
+  notify: 
+    - restart carbon-cache
+
+- name: enable graphite
+  file: state=link src=/usr/share/graphite-web/apache2-graphite.conf dest=/etc/apache2/conf-enabled/apache2-graphite.conf
+  
+- name: libapache2-mod-wsgi
+  apt: pkg=libapache2-mod-wsgi
+  notify:
+    - restart apache
+

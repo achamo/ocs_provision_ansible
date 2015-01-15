@@ -1,0 +1,7 @@
+---
+  - name: define hostname
+    hostname: name={{ ocs_name }}
+  - name: test connection
+    ping:
+  - name: create randomfile
+    template: src=main.yml dest=/tmp/coucou owner=root group=root mode="0644"

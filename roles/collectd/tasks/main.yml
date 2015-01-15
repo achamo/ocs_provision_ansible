@@ -1,0 +1,8 @@
+---
+- name: install collectd
+  apt: pkg=collectd-core state=latest update_cache=yes
+
+- name: collectd.conf
+  template: src=collectd_{{ collectd_mode }}.conf dest=/etc/collectd/collectd.conf
+  notify:
+    - restart collectd

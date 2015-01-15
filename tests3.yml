@@ -1,0 +1,19 @@
+---
+- hosts: all
+  tasks:
+    - name: collect
+      action: ocs_facts
+- hosts: tests3
+  roles:
+    - common
+    - collectd
+- hosts: master
+  tasks:
+    - name: collectd facts
+      action: ocs_facts
+  roles:
+    - common
+    - collectd
+    - grafana
+    - java
+    - elasticsearch

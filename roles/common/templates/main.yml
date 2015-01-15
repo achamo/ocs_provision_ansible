@@ -1,0 +1,7 @@
+coucou
+
+{% for host in groups['master'] %}
+  {{ host }} 
+{% endfor %}
+
+{{ ocs_name }}

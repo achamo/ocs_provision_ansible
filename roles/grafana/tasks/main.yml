@@ -1,0 +1,18 @@
+---
+- name: download grafana
+  get_url: url=http://grafanarel.s3.amazonaws.com/grafana-1.9.1.tar.gz dest=/tmp/grafana.tgz
+- name: mkdir grafana
+  file: state=directory dest=/srv/grafana
+- name: unarchive grafana
+  unarchive: copy=no src=/tmp/grafana.tgz dest=/srv/grafana
+
+- name: default grafana dashboard
+  copy: src=default.json dest=/srv/grafana/grafana-1.9.1/app/dashboards/default.json
+
+- name: grafana config
+  template: src=config.js dest=/srv/grafana/grafana-1.9.1/config.js
+
+- name: grafana apache
+  copy: src=grafana.conf dest=/etc/apache2/conf-enabled/grafana.conf 
+  notify:
+    - restart apache

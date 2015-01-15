@@ -1,0 +1,14 @@
+---
+  - name: provision master
+    ocs_provider:
+      name: test-master
+      state: running
+      image: "Ubuntu Utopic"
+      environment: master
+  - name: provision test
+    ocs_provider:
+      name: test-ansible-{{ item }}
+      state: running
+      image: "Ubuntu Utopic"
+      environment: tests3
+    with_sequence: count=2

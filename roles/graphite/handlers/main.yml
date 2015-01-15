@@ -1,0 +1,5 @@
+---
+- name: restart carbon-cache
+  service: name=carbon-cache state=restarted
+- name: graphite syncdb
+  shell: su _graphite -s /bin/bash -c "graphite-manage syncdb --noinput"
