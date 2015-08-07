@@ -1,0 +1,10 @@
+---
+  - hosts: localhost
+    tasks:
+    - name: provision 5
+      ocs_provider:
+        name: blih-{{ item }}
+        state: running
+        image: "Ubuntu Utopic"
+        environment: blih
+      with_sequence: count=5

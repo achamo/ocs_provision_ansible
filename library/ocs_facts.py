@@ -16,7 +16,7 @@ def main():
   res = conn.getresponse()
   data = res.read()
   raw_facts = json.loads(data)
-  facts = {}
+  facts = { 'changed': True }
   for k,v in raw_facts.iteritems():
     facts["ocs_{0}".format(k)] = v
 
